@@ -7,9 +7,9 @@ const palavra = palavras[Math.floor(Math.random() * palavras.length)]
 
 // Inicializa a sombra e a letra.
 var sombra = []
-var letra = ""
+var letra = " "
 var contador_vitoria = 0
-var contador_vidas = 5
+var contador_vidas = 4
 
 // Adiciona "_" para cada letra da palavra.
 const gera_sombra = ( palavra, sombra ) => {
@@ -49,7 +49,7 @@ const checaLetra = ( palavra, sombra, letra, contador_vitoria, contador_vidas ) 
         }
     }
     if ( checa_acerto == contador_vitoria ){
-        descontaVida( contador_vidas )
+        descontaVida()
         prompt( "Restam " + contador_vidas + " vidas." )
     }
 }
@@ -60,8 +60,8 @@ const checaVitoria = ( contador_vitoria ) => {
     }
 }
 
-const descontaVida = ( contador_vidas ) => {
-    contador_vidas = contador_vidas - 1
+const descontaVida = () => {
+    contador_vidas --
 
     if( contador_vidas <= 0 ){
         prompt( "Você perdeu!" )
